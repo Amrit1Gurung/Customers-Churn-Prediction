@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Fare Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
+    <div class="container">
+      <h1 class="mx-auto text-light">Customer Churn Prediction</h1>
+    </div>
+    </nav>
+    <br><br><br>
+    <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">MonthlyCharges</h5>
+                            <input type="text" name="MonthlyCharges" id="monthlycharges" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">TotalCharges</h5>
+                            <input type="text" name="TotalCharges" id="totalcharges" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dependents</h5>
+                            <select name="Dependents" id="dependents" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">DeviceProtection</h5>
+                            <select name="DeviceProtection" id="deviceprotection" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No Internet Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">InternetServices</h5>
+                            <select name="InternetService" required="required" class="form-control">
+                                <option value="Fiber optic">Fiber optic</option>
+                                <option value="DSL">DSL</option>
+                                <option value="No">No</optio>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">OnlineSecurity</h5>
+                            <select name="OnlineSecurity" id="onlinesecurity" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No Internet Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">OnlineBackup</h5>
+                            <select name="OnlineBackup" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No Internet Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">TechSupport</h5>
+                            <select name="TechSupport" id="techsupport" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No Internet Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">StreamingTV</h5>
+                            <select name="StreamingTV" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No Internet Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">StreamingMovies</h5>
+                            <select name="StreamingMovies" id="streamingmovies" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No internet service">No Internet Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Contract</h5>
+                            <select name="Contract" required="required" class="form-control">
+                                <option value="Month-to-month">Month-to-month</option>
+                                <option value="One year">One year</option>
+                                <option value="Two year">Two year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">PaperlessBilling</h5>
+                            <select name="PaperlessBilling" id="onlinesecurity" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">PaymentMethod</h5>
+                            <select name="PaymentMethod" id="paymentmethod" required="required" class="form-control">
+                                <option value="Electronic check">Electronic check</option>
+                                <option value="Mailed check">Mailed check</option>
+                                <option value="bank transfer">Bank transfer (automatic)</option>
+                                <option value="Credit card">Credit card (automatic) </option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tenure</h5>
+                            <input type="text" name="tenure" id="tenure" required="required" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Gender</h5>
+                            <select name="gender" required="required" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Partner</h5>
+                            <select name="partner" id="partner" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">PhoneServices</h5>
+                            <select name="phoneservice" required="required" class="form-control">
+                                <option value="Yes">Yes/option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">SeniorCitizen</h5>
+                            <select name="seniorcitizen" id="seniorcitizen" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">MultipleLines</h5>
+                            <select name="multiplelines" required="required" class="form-control">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                                <option value="No phone service">No phone Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <input type="submit" value="predict" class="btn btn-dark align-middle">
+           
+        </form>
+        <br>
+        <br>
+
+    <div class="row">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4">
+      <h3> {{prediction_text }}</h3>
+    </div>
+    <div class="col-md-4 col-sm-4"></div>
+
+    </div>
+
+        <br>
+        <br>
+    </div>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>
