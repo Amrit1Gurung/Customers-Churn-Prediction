@@ -2,6 +2,11 @@
 ## Overview
 Churn is a widespread problem across almost every industry. However, it is especially relevant to the telecommunications market, as many believe it to have reached saturation point. Competition is at an all-time high and many telcos are recognizing the need to improve customer experience and service in order to lower customer churn rates and compete effectively.  
 
+## File Explanation
+= ChurnPrediction.ipynb: This file contains the baseline models without detail analysis. 
+- ChurnPrediction..ipynb: This is the main file. It contains detail analysis and improvement of earlier built baseline models
+- ChurnPrediction3.ipynb: This file is exactly same as ChurnPrediction..ipynb except that here i used only important features to build predictive     model.
+
 ## Daataset
 The dataset for this project is obtained from the kaggle.  
 ### Contents
@@ -19,13 +24,13 @@ The task is to predict the customer churn event and find the features that influ
 
 ## Key Insights obtained
 #### Impact of Numerical features
-<p><img src = 'plots/num_distri_plus_with_Churn.png' height = '100' width='200'></p>  
+<p><img src = 'plots/num_distri_plus_with_Churn.png' height = '400' width='600'></p>  
 - Tenure: Customers who have been with the company for less months by the quarter have high churn rate. Also we see that the <i>tenure</i> variable   is stacked at the tail, so the large proportion of customers have either been had the shortest (1 month) or longest (72 months) tenure.
 - MOnthlyCharges: Customers with high monthly charge in average have high churn rate. It aslo seem as if <i>MonthlyCharges</i> variable is normally   distributed around dollar 80  with large stack near lower rates
 - TotalCharges: Customers who have low total charge in average have high churn rate. This variable is also positively skewed with large stack at lower reates.
 
 #### Impact of Categorical Features
-<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '200' width='300'></p>  
+<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '800' width='600'></p>  
 <ul>
     <li>gender: gender of customers have no significant affect on Churn event.</li>
     <li>Partner: customers without partners seems have high churn.</li>
@@ -44,6 +49,21 @@ The task is to predict the customer churn event and find the features that influ
     <li>PaymentMethod: Customers with payment method of electronic check have high churn event in average. While ohter methods don't have significant difference in churn event.</li>
     <li>SeniorCitizen: Customers who are senior citizens have higher chum rate in average than those who aren't.</li>
 </ul>
+
+## Modeling Result
+The data had skewed distribution i.e. Class Imbalance. To deal with this problem i used oversampling method to oversample minority class label.  
+Since most of the features are categorical, tree based classifiers are more suited for this particular data. I used Random Forest classifier and Decision Tree classifier for predictive modeling. Also i applied **mutual class info** to obtain important features for predictive modeling and built odel based on these important features.  
+
+<p> <img src = 'plots/feature_importance.png' height='800' width='600'></P>  
+
+As we can see from the feature importance plots above, the most important features are:  
+- Customer's TotalCharges 
+- Customer's monthlyCharges
+- Customer's tenure(number of months customer has been with the company) with the comapny
+- Customer's contract with the company
+- Internet Sevices customers have subscribed
+- Tech support service customers have subscribed
+
 
 
 
