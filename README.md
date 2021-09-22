@@ -30,7 +30,7 @@ The task is to predict the customer churn event and find the features that influ
 - TotalCharges: Customers who have low total charge in average have high churn rate. This variable is also positively skewed with large stack at lower reates.
 
 #### Impact of Categorical Features
-<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '600' width='500'></p>  
+<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '600' width='700'></p>  
 <ul>
     <li>gender: gender of customers have no significant affect on Churn event.</li>
     <li>Partner: customers without partners seems have high churn.</li>
