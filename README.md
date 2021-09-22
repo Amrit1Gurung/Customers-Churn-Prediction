@@ -3,7 +3,7 @@
 Churn is a widespread problem across almost every industry. However, it is especially relevant to the telecommunications market, as many believe it to have reached saturation point. Competition is at an all-time high and many telcos are recognizing the need to improve customer experience and service in order to lower customer churn rates and compete effectively.  
 
 ## File Explanation
-= ChurnPrediction.ipynb: This file contains the baseline models without detail analysis. 
+- ChurnPrediction.ipynb: This file contains the baseline models without detail analysis. 
 - ChurnPrediction..ipynb: This is the main file. It contains detail analysis and improvement of earlier built baseline models
 - ChurnPrediction3.ipynb: This file is exactly same as ChurnPrediction..ipynb except that here i used only important features to build predictive     model.
 
