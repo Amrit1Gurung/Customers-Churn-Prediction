@@ -24,13 +24,13 @@ The task is to predict the customer churn event and find the features that influ
 
 ## Key Insights obtained
 #### Impact of Numerical features
-<p><img src = 'plots/num_distri_plus_with_Churn.png' height = '400' width='600'></p>  
+<p><img src = 'plots/num_distri_plus_with_Churn.png' height = '300' width='600'></p>  
 - Tenure: Customers who have been with the company for less months by the quarter have high churn rate. Also we see that the <i>tenure</i> variable   is stacked at the tail, so the large proportion of customers have either been had the shortest (1 month) or longest (72 months) tenure.
 - MOnthlyCharges: Customers with high monthly charge in average have high churn rate. It aslo seem as if <i>MonthlyCharges</i> variable is normally   distributed around dollar 80  with large stack near lower rates
 - TotalCharges: Customers who have low total charge in average have high churn rate. This variable is also positively skewed with large stack at lower reates.
 
 #### Impact of Categorical Features
-<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '600' width='700'></p>  
+<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '500' width='700'></p>  
 <ul>
     <li>gender: gender of customers have no significant affect on Churn event.</li>
     <li>Partner: customers without partners seems have high churn.</li>
@@ -63,6 +63,7 @@ As we can see from the feature importance plots above, the most important featur
 - Customer's contract with the company
 - Internet Sevices customers have subscribed
 - Tech support service customers have subscribed
+
 
 
 
