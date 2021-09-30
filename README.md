@@ -30,7 +30,7 @@ The task is to predict the customer churn event and find the features that influ
 - TotalCharges: Customers who have low total charge in average have high churn rate. This variable is also positively skewed with large stack at lower reates.
 
 #### Impact of Categorical Features
-<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '500' width='700'></p>  
+<p><img src = 'plots/impact_of_cat_feat_in_Churn.png' height = '450' width='700'></p>  
 <ul>
     <li>gender: gender of customers have no significant affect on Churn event.</li>
     <li>Partner: customers without partners seems have high churn.</li>
@@ -52,7 +52,8 @@ The task is to predict the customer churn event and find the features that influ
 
 ## Modeling Result
 The data had skewed distribution i.e. Class Imbalance. To deal with this problem i used oversampling method to oversample minority class label.  
-Since most of the features are categorical, tree based classifiers are more suited for this particular data. I used Random Forest classifier and Decision Tree classifier for predictive modeling. Also i applied **mutual class info** to obtain important features for predictive modeling and built odel based on these important features.  
+Since most of the features are categorical, tree based classifiers are more suited for this particular data. I used Random Forest classifier and Decision Tree classifier for predictive modeling. Also i applied **mutual class info** to obtain important features for predictive modeling and built odel based on these important features. The plot given below
+is feature importance obtained from Random Forest.  
 
 <p> <img src = 'plots/feature_importance.png' height='600' width='400'></P>  
 
@@ -62,7 +63,7 @@ As we can see from the feature importance plots above, the most important featur
 - Customer's tenure(number of months customer has been with the company) with the comapny
 - Customer's contract with the company
 - Internet Sevices customers have subscribed
-- Tech support service customers have subscribed
+- Tech support service customers have subscribed.
 
 
 
