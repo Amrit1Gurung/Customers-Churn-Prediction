@@ -6,6 +6,9 @@ Churn is a widespread problem across almost every industry. However, it is espec
 - ChurnPrediction.ipynb: This file contains the baseline models without detail analysis. 
 - ChurnPrediction..ipynb: This is the main file. It contains detail analysis and improvement of earlier built baseline models
 - ChurnPrediction3.ipynb: This file is exactly same as ChurnPrediction..ipynb except that here i used only important features to build predictive     model.
+- main.py: Flask code for web app and <i> templates </i> folder contains frontend tech
+- plots folder contains all the plots build in this project
+- saved_models folder contains model saved
 
 ## Daataset
 The dataset for this project is obtained from the kaggle.  
@@ -63,7 +66,13 @@ As we can see from the feature importance plots above, the most important featur
 - Customer's tenure(number of months customer has been with the company) with the comapny
 - Customer's contract with the company
 - Internet Sevices customers have subscribed
-- Tech support service customers have subscribed.
+- Tech support service customers have subscribed.  
+
+## Web Application
+A Flask based web application for this project that predicts customer churn based on input.
+
+- <img src = 'plots/1.png' height='400' width='600'>
+- <img src = 'plots/2.png' height='400' width='600'>
 
 
 
